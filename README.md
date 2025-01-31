@@ -144,9 +144,82 @@ Output:
 Total expenses for January: $25
 ```
 
+### `summary --category`
+
+Filter expenses by category:
+
+```bash
+expense-tracker summary --category "Food"
+```
+
+Output:
+
+```bash
+Total expenses: $20.00
+```
+
+### `summary --month --category`
+
+Filter expenses by month and category:
+
+```bash
+expense-tracker summary --month 1 --category "Food"
+```
+
+Output:
+
+```bash
+Total expenses for January: $20.00
+```
+
+### `summary --month --budget`
+
+Check expenses against budget:
+
+```bash
+expense-tracker summary --month 1 --budget 100
+```
+
+Output:
+
+```bash
+Total expenses for January: $25.00
+Warning: You have exceeded your budget of $100.00 for January
+```
+
+### `budget`
+
+Set monthly budget:
+
+```bash
+expense-tracker budget --month 1 --amount 100
+```
+
+Output:
+
+```bash
+Budget set successfully for January 2024: $100.00
+```
+
+### `export`
+
+Export to CSV:
+
+```bash
+expense-tracker export --file expenses.csv
+```
+
+Output:
+
+```bash
+Expenses exported to expenses.csv
+```
+
 ## Data Storage
 
 The application stores expense data in a JSON file. Each expense has the following structure:
+
+### Expense Structure
 
 ```json
 {
@@ -157,6 +230,16 @@ The application stores expense data in a JSON file. Each expense has the followi
 }
 ```
 
+### Budget Structure
+
+```json
+{
+  "month": 1,
+  "year": 2024,
+  "amount": 100
+}
+```
+
 ## Error Handling
 
 The application handles invalid inputs and edge cases, such as:
@@ -164,12 +247,6 @@ The application handles invalid inputs and edge cases, such as:
 - Negative amounts
 - Non-existent expense IDs
 - Invalid month values
-
-## Extending the Project
-
-- Add expense categories and allow users to filter expenses by category.
-- Allow users to set a budget for each month and show a warning when the user exceeds the budget
-- Allow users to export expenses to a CSV file.
 
 ## Contributing
 

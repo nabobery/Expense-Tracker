@@ -9,7 +9,7 @@
 !go.mod
 !.pre-commit-config.yaml
 
-!README.md
+!*.md
 !LICENSE
 
 # !Makefile
